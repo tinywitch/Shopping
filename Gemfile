@@ -16,6 +16,7 @@ gem 'sass-rails', '~> 5.0'
 
 gem 'devise'
 
+gem 'toastr-rails'
 group :development, :test do
   gem 'byebug', platform: :mri
 end
