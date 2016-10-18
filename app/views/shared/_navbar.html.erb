@@ -8,6 +8,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#">Shopping</a>
+      <!-- <% link_to "Shopping", root_path%> -->
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
@@ -20,8 +21,10 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
             aria-expanded="false">
               <%= image_tag avatar_url(current_user), class: "img-circle avatar-small" %>&nbsp;
-              <%= current_user.fullname %> <span class="caret"></span>
-          </a>
+              <%= current_user.fullname %>
+              <span class="caret"></span>
+            </a>
+
             <ul class="dropdown-menu">
               <li><a href="#">Action</a></li>
               <li><a href="#">Another action</a></li>
@@ -31,6 +34,8 @@
               <li><%= link_to "Log Out", destroy_user_session_path, method: :delete%></li>
             </ul>
           </li>
+          <%= link_to image_tag("cart.png", class: "img-circle avatar-small", alt: "cart"), '#' %>
+          
         <% end %>
       </ul>
     </div><!--/.nav-collapse -->
