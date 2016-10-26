@@ -1,10 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "toastr";
-
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 .avatar-small {
-  width: 30px;
+  width: 28px;
 }
 
 .avatar-medium {
