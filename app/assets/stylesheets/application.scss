@@ -20,6 +20,10 @@
   width: 100%;
 }
 
+.carousel-inner {
+  min-width: 100%;
+  height: 900px;
+}
 .panel-heading.preview {
   padding: 0;
 }
@@ -53,4 +57,10 @@
   border-color: #e00007;
   background-color: #e00007;
   outline: none;
+}
+
+.product-image
+{
+  height: 300px;
+  width: auto;
 }

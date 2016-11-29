@@ -19,6 +19,8 @@ gem 'devise'
 gem 'font-awesome-sass'
 
 gem 'toastr-rails'
+gem 'sendgrid-rails', '~> 2.0', '>= 2.0.5'
+gem 'ransack'
 group :development, :test do
   gem 'byebug', platform: :mri
 end

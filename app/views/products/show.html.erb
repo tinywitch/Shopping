@@ -6,20 +6,24 @@
         </div>
 
         <div class="col-md-4">
-          <%= form_for @product do |f| %>
+          <%= form_for [@product, @product.orders.new] do |f| %>
             <div class="form-group">
-              <h3><b><%= @product.name %></b></h3>
+              <h2><b><%= @product.name %></b></h2>
             </div>
             <div class="form-group">
-              <p><%= @product.description %></p>
+              <p><b>Category : </b><%= @product.category.name %></p>
             </div>
             <div class="form-group">
-              <h5>Price : <%= @product.price %>$</h5>
+              <p><b>Description : </b><%= @product.description %></p>
+            </div>
+            <div class="form-group">
+              <p><b>Price :</b> <%= @product.price %>$</p>
             </div>
             <div class="actions">
               <%= f.submit "Add To Cart", class: "btn btn-primary"%>
             </div>
-        <% end %>
+          <% end %>
+        </div>
     </div>
   </div>
 </div>

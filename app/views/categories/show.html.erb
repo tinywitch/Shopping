@@ -1,0 +1,22 @@
+<h3><strong>(<%= @category.products.count %>) Products in <%= @category.name%></strong></h3>
+<br>
+<% @category.products.each do |product|%>
+  <div class="row">
+    <div class="col-md-3">
+      <%= link_to product_path(product) do %>
+        <%= image_tag product.photo, style: "width:100%"%>
+      <% end %>
+    </div>
+    <div class="col-md-7">
+      <%= link_to product_path(product) do %>
+        <h4><strong><%= product.name%></strong></h4>
+      <% end %>
+      <br>
+      <strong>Description :</strong><%= product.description%>
+    </div>
+    <div class="col-md-2 pull-right">
+      Price: <%= product.price %>$
+    </div>
+  </div>
+  <br>
+<% end %>

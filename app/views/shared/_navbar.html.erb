@@ -10,9 +10,17 @@
       <a class="navbar-brand" href="/">Shopping</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
+      <%= form_tag search_path, class: "navbar-form navbar-left", method: :get do %>
+        <div class="form-group">
+          <%= text_field_tag :search, params[:search], placeholder: "What do you want to buy?", class: "form-control", style: "width:50vw"%>
+        </div>
+      <% end %>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="#"><i class="fa fa-cart-plus" aria-hidden="true"></i>&nbsp;Your Cart</a>
+          <%= link_to orders_path do%>
+            <i class="fa fa-cart-plus" aria-hidden="true"></i> <p style="display:inline-block">Your Cart (<%= current_user.orders.count%>)</p>
+          <% end %>
+
         </li>
         <% if(!user_signed_in?) %>
           <li><%= link_to "Log In", new_user_session_path %></li>
@@ -21,7 +29,7 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
             aria-expanded="false">
-              <%= image_tag avatar_url(current_user), class: "img-circle avatar-small" %>&nbsp;
+              <%= image_tag avatar_url(current_user), class: "img-circle avatar-medium" %>&nbsp;
               <span class="caret"></span>
             </a>
 

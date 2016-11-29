@@ -1,5 +1,10 @@
 class PagesController < ApplicationController
   def home
-    @products = Product.all
+    @categories = Category.all
   end
+
+  def search
+    @products = Product.search(params[:search])
+  end
+
 end

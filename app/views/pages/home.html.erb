@@ -12,15 +12,15 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-            <%= image_tag "1.jpg"%>
+            <%= image_tag "vest_2.jpg"%>
           </div>
 
           <div class="item">
-            <%= image_tag "2.jpg"%>
+            <%= image_tag "jean_1.jpg"%>
           </div>
 
           <div class="item">
-            <%= image_tag "3.jpg"%>
+            <%= image_tag "handbag_2.jpg"%>
           </div>
         </div>
 
@@ -35,47 +35,34 @@
         </a>
       </div>
     </div>
-    <hr>
-    <h3><b>Hot Fashion</b></h3>
-    <div class="row" height = "300">
-        <% @products.each do |product|  %>
-        <div class="col-md-4">
-          <div class="panel panel-default">
-            <div class="panel-heading preview">
-              <%= link_to product_path(product) do%>
-                <%= image_tag product.photo %>
-              <% end %>
-            </div>
-            <div class="panel-body">
-              <%= link_to product_path(product) do %>
-                <h3><%= product.name %></h3>
-              <% end %>
-              <h5>$<%= product.price%></h5>
-            </div>
-          </div>
-        </div>
-        <% end %>
-    </div>
+    <br>
 
-    <hr>
-
-    <h3><b>Most Buys</b></h3>
     <div class="row">
-      <% @products.each do |product|  %>
-      <div class="col-md-4">
-        <div class="panel panel-default">
-          <div class="panel-heading preview">
-            <%= image_tag product.photo%>
-          </div>
-          <div class="panel-body">
-            <%= link_to product_path(product) do %>
-              <h3><%= product.name %></h3>
+      <% @categories.each do |category|%>
+        <div class="row">
+          <%= link_to category_path(category) do %>
+            <h3 class="text-center"><b><%= category.name%></b></h3>
+          <% end %>
+          <div class="row">
+            <% category.products.each do |product|%>
+              <div class="col-md-4">
+                <div class="panel panel-default">
+                  <div class="panel-heading preview">
+                    <%= image_tag product.photo, class:"product-image"%>
+                  </div>
+                  <div class="panel-body">
+                    <%= link_to product_path(product) do %>
+                      <h3><%= product.name %></h3>
+                    <% end %>
+                    <h5>$<%= product.price%></h5>
+                  </div>
+                </div>
+              </div>
             <% end %>
-            <h5>$<%= product.price%></h5>
           </div>
         </div>
-      </div>
       <% end %>
     </div>
+
   </div>
 </div>

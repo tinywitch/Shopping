@@ -1,0 +1,33 @@
+<h3><strong>Cart</strong> (<%= @orders.count%>) products</h3>
+<br>
+<% @orders.each do |order|%>
+  <div class="row">
+    <div class="col-md-3">
+      <%= image_tag order.product.photo, style: "width:100%"%>
+    </div>
+    <div class="col-md-7">
+      <h4><strong><%= order.product.name%></strong></h4>
+      <br>
+      <strong>Description :</strong><%= order.product.description%>
+    </div>
+    <div class="col-md-2 pull-right">
+      <%= order.product.price %>$
+      <br>
+      Quantity: <%= order.quantity %>
+    </div>
+  </div>
+  <hr>
+<% end %>
+<% if @total != nil%>
+  <div class="row center">
+    <div class="col-md-6">
+      <% form_for %>
+      <% end %>
+      <button class="btn btn-primary" href="/order/">Payment</button>
+    </div>
+    <div class="pull-right">
+      <h4><strong>Total: <%= @total%> ($)</strong></h4>
+    </div>
+  </div>
+<% end %>
+<br>
